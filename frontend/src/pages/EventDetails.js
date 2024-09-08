@@ -1,11 +1,9 @@
-import React from 'react'
+import { useParams } from 'react-router-dom';
 
 function EventDetails() {
-  return (
-    <div>
-      Details
-    </div>
-  )
+  const { id } = useParams();
+  // Fetch and display event details based on id
+  return <div>Details for event {id}</div>;
 }
 
-export default EventDetails
+export default EventDetails;
