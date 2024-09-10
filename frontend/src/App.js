@@ -7,6 +7,7 @@ import Events from './pages/Events';
 import HomePage from './pages/HomePage';
 import NewEvent from './pages/NewEvent';
 import RootLayout from './pages/RootLayout';
+import { loader as eventsLoader } from './pages/Events';
 
 function App() {
   const router = createBrowserRouter([
@@ -19,16 +20,7 @@ function App() {
           path: "events",
           element: <EventsRoot />,
           children: [
-            {index: true, element: <Events />, loader: async() => {
-              const response = await fetch('http://localhost:8080/events');
-
-              if (!response.ok) {
-               
-              } else {
-                const resData = await response.json();
-                return resData.events;
-              }
-            }},
+            {index: true, element: <Events />, loader: eventsLoader},
             {path: ':id', element: <EventDetails />},
             {path: 'new', element: <NewEvent />},
             {path: ':id/edit', element: <EditEvent />},

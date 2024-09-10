@@ -5,8 +5,7 @@ import MainNavigation from '../components/MainNavigation'
 function HomePage() {
   return (
     <>
-      <MainNavigation />
-      <Outlet />
+      Home
     </>
   )
 }
