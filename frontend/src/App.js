@@ -8,12 +8,13 @@ import HomePage from './pages/HomePage';
 import NewEvent from './pages/NewEvent';
 import RootLayout from './pages/RootLayout';
 import { loader as eventsLoader } from './pages/Events';
-
+import Error from './pages/Error';
 function App() {
   const router = createBrowserRouter([
     {
       path: "/",
       element: <RootLayout />,
+      errorElement: <Error /> ,
       children: [
         { index: true, element: <HomePage />},
         {
