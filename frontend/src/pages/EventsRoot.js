@@ -1,12 +1,14 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import EventsNavigation from '../components/EventsNavigation'
+import { Outlet } from 'react-router-dom'
+
 
 function EventsRoot() {
   return (
-    <ul>
-        <Link to='events'>All Events</Link>
-        <Link to='new'>New Events</Link>
-    </ul>
+    <>
+      <EventsNavigation />
+      <Outlet />
+    </>
   )
 }
 
